@@ -1,7 +1,6 @@
 package com.obydul.lambda.anony;
 
-public class AnonymouseFunTest {
-	
+public class AnonymouseFunTest {	
 	//public void an1() {
 	//	System.out.println("Tradition process");
 	//}
