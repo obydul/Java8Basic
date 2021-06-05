@@ -7,7 +7,14 @@ import java.util.List;
 public class BookService {
 	public List<Book> getBookSort() {
 		List<Book> books = new BookDAO().getBooks();
-		Collections.sort(books, new MyComparator());
+		Collections.sort(books, (o1, o2) -> o1.getName().compareTo(o2.getName()));
+
+//				new Comparator<Book>() {
+//			@Override
+//			public int compare(Book o1, Book o2) {
+//				return o1.getName().compareTo(o2.getName());
+//			}
+//		});
 		return books;
 	}
 
@@ -16,11 +23,10 @@ public class BookService {
 	}
 }
 
-class MyComparator implements Comparator<Book> {
-
-	@Override
-	public int compare(Book o1, Book o2) {
-		return o1.getName().compareTo(o2.getName());
-	}
-
-}
+//class MyComparator implements Comparator<Book> {
+//	@Override
+//	public int compare(Book o1, Book o2) {
+//		return o1.getName().compareTo(o2.getName());
+//	}
+//
+//}
